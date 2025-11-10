@@ -20,7 +20,7 @@
 	<!-- MAIN: el formulario queda centrado dentro del espacio restante -->
 	<main class="flex-1 main-area">
 	  <div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-lg text-center loginCard">
-		<h2 class="text-3xl font-bold mb-10 tracking-wide title-shadow" id="ig8am">
+		<h2 id="ig8am" class="text-3xl font-bold mb-10 tracking-wide title-shadow">
 		  <span class="underline-title">SSO IRISMail</span>
 		</h2>
 		[#if errorMessage??]
@@ -58,25 +58,37 @@
 	  </div>
 	</main>
   
-  
+
 </body>
 
 <script>
-	window.onload = function () {
-	  var form = document.querySelector("form");
-	  form.onsubmit = function () {
-		var u = document.getElementById('username').value.trim();
-		var p = document.getElementById('password').value.trim();
-		if (!u) {
-		  alert('Username is required');
-		  return false;
-		}
-		if (!p) {
-		  alert('Password is required');
-		  return false;
-		}
-		return true;
-	  }
-	};
-  </script>
+window.onload = function () {
+  const form = document.querySelector("form");
+  const username = document.getElementById("username");
+  const password = document.getElementById("password");
+
+  form.onsubmit = function (e) {
+    let valid = true;
+
+    // Reiniciar estado previo
+    [username, password].forEach((input) => {
+      input.classList.remove("input-error");
+    });
+
+    if (username.value.trim() === "") {
+      username.classList.add("input-error");
+      valid = false;
+    }
+    if (password.value.trim() === "") {
+      password.classList.add("input-error");
+      valid = false;
+    }
+
+    // Evita enviar el formulario si hay errores
+    if (!valid) {
+      e.preventDefault();
+    }
+  };
+};
+</script>
 </html>
