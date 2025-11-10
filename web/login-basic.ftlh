@@ -15,7 +15,7 @@
   
 	<!-- HEADER: logo grande (independiente del form) -->
 	<header class="w-full flex justify-center pt-6 pb-4 logo-hero">
-  		<img src="https://www.rediris.es/assets/wbb5/mm/carrusel-1.svg" alt="RedIRIS" class="logo-img">
+	  <img src="https://www.rediris.es/assets/wbb5/mm/carrusel-1.svg" alt="RedIRIS" class="logo-img">
 	</header>
 	<!-- MAIN: el formulario queda centrado dentro del espacio restante -->
 	<main class="flex-1 main-area">
@@ -50,10 +50,7 @@
 		</form>
 		<!-- Texto inferior -->
 		<p class="text-sm text-gray-600 mt-10">
-		  Soportado por:
-		  <a href="https://quersystem.com" target="_blank" class="text--006072- font-semibold hover:underline">
-			Quersystem
-		  </a>
+		  Soportado por <a href="https://quersystem.com" target="_blank" class="text--006072- font-semibold hover:underline">Quersystem</a>
 		</p>
 	  </div>
 	</main>
