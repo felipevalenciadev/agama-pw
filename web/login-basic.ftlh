@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SSO IRISMail
-	</title><link rel="stylesheet" href="style.css"></head>
+	</title><link rel="stylesheet" href="style.css"><link rel="icon" type="image/png" href="favicon.png"></head>
 <body>
 
   
+	
 	
 	
 	
@@ -50,7 +51,8 @@
 		</form>
 		<!-- Texto inferior -->
 		<p class="text-sm text-gray-600 mt-10">
-		  Soportado por <a href="https://quersystem.com" target="_blank" class="text--006072- font-semibold hover:underline">Quersystem</a>
+		  Soportado por 
+		  <a href="https://quersystem.com" target="_blank" class="text--006072- font-semibold hover:underline">Quersystem</a>
 		</p>
 	  </div>
 	</main>
