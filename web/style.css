@@ -1,65 +1,159 @@
-:root{
+:root {
   --brand: #006072;
   --brand-2: #0090a8; /* tono auxiliar para hover */
+  --text-gray: #6b7280;
 }
 
 /* LOGO: 80% del viewport, sin deformarse */
-.logo-img{
+.logo-img {
   width: min(80vw, 1200px);
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
-/* Área principal: centra el form vertical y horizontalmente
-   dentro del espacio restante bajo el logo */
-.main-area{
-  min-height: 60vh;           /* evita que quede pegado al logo */
+/* Área principal centrada vertical y horizontalmente */
+.main-area {
+  min-height: 60vh;
   display: grid;
   place-items: center;
 }
 
-/* Tarjeta del formulario */
-.loginCard{
-  box-shadow: 0 12px 40px rgba(0,0,0,.12);
+/* === TARJETA DEL FORMULARIO === */
+.loginCard {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
   border-radius: 16px;
+  background-color: #fff;
+  max-width: 460px;
+  width: 100%;
+  padding: 3rem;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-/* Botón con tu color y hover */
-.login-btn{
-  background: var(--brand);
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
-  box-shadow: 0 6px 14px rgba(0,96,114,.18);
+/* === TÍTULO PRINCIPAL === */
+.title-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
 }
-.login-btn:hover{
-  background: var(--brand-2);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(0,96,114,.22);
+.underline-title {
+  position: relative;
+  display: inline-block;
 }
-
-/* Inputs y foco en tu color */
-.input-field{
-  outline: none;
-  transition: box-shadow .2s ease, border-color .2s ease;
-}
-.input-field:focus{
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(0,96,114,.20);
-}
-
-/* Título con sombra y subrayado */
-.title-shadow{ text-shadow: 0 1px 2px rgba(0,0,0,.18); }
-.underline-title{ position: relative; }
-.underline-title::after{
-  content:'';
-  position:absolute; left:0; bottom:-8px;
-  width:100%; height:3px; border-radius:2px;
+.underline-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  border-radius: 2px;
   background: linear-gradient(90deg, var(--brand-2), var(--brand));
 }
 
-/* Mensajes (si los usas fuera del Freemarker) */
-.errorMessage{ color: #b91c1c; }
-.infoMessage{ color: #1e40af; }
+/* === BOTÓN PRINCIPAL === */
+.login-btn {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 96, 114, 0.18);
+}
+.login-btn:hover {
+  background: var(--brand-2);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0, 96, 114, 0.22);
+}
 
-/ * New */
+/* === FLOATING LABELS === */
+.floating-group {
+  position: relative;
+  margin-bottom: 2rem;
+}
 
+.floating-input {
+  width: 100%;
+  padding: 1rem 0.75rem 0.25rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
 
+.floating-input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(0, 96, 114, 0.15);
+}
+
+/* El label dentro del input */
+.floating-label {
+  position: absolute;
+  left: 0.75rem;
+  top: 1rem;
+  color: var(--text-gray);
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background: white;
+  padding: 0 0.25rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Efecto flotante al enfocar o tener texto */
+.floating-input:focus + .floating-label,.floating-input:not(:placeholder-shown) + .floating-label {
+  top: -0.55rem;
+  left: 0.65rem;
+  font-size: 0.75rem;
+  color: var(--brand);
+  opacity: 1;
+}
+
+/* Animación suave de entrada/salida */
+.floating-input:focus + .floating-label {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* === TEXTO INFERIOR === */
+.loginCard p {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-top: 1.5rem;
+}
+.loginCard a {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+.loginCard a:hover {
+  text-decoration: underline;
+}
+
+/* === MENSAJES (FREEMARKER) === */
+.errorMessage {
+  color: #b91c1c;
+}
+.infoMessage {
+  color: #1e40af;
+}
+
+/* === RESPONSIVE AJUSTES === */
+@media (max-width: 600px) {
+  .loginCard {
+    padding: 2rem;
+    max-width: 90%;
+  }
+  .floating-group {
+    margin-bottom: 1.5rem;
+  }
+  .login-btn {
+    font-size: 0.9rem;
+  }
+}
