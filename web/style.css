@@ -1,49 +1,47 @@
-.errorMessage {
-color: red;
-}
-
-.infoMessage {
-color: blue;
-}
-
-
-.loginCard{
+.loginCard {
   background-image: url('wave.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: bottom;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
 }
 
-.button-gradient {
-  background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%);
-  margin: 10px;
-  padding: 15px 45px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;            
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
-  display: block;
+/* Botón con los colores de tu logo */
+.login-btn {
+  background: linear-gradient(90deg, #006072 0%, #0090a8 100%);
+}
+.login-btn:hover {
+  background: linear-gradient(90deg, #0090a8 0%, #006072 100%);
+  transform: scale(1.03);
 }
 
-.button-gradient:hover {
-  background-position: right center; /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
+/* Título con sombra y efecto de subrayado */
+.title-shadow {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.underline-title {
+  position: relative;
+}
+.underline-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0090a8, #006072);
+  border-radius: 2px;
 }
 
-.ribbon {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150px;
-    height: 22px;
-    margin-right: -50px;
-    margin-top: 15px;
-    -ms-transform: rotate(45deg); /* IE 9 */
-    -webkit-transform: rotate(45deg); /* Safari prior 9.0 */
-    transform: rotate(45deg); /* Standard syntax */
-  }
-         
+/* Mensajes */
+.errorMessage {
+  color: red;
+}
+.infoMessage {
+  color: blue;
+}
+
+/* Ajustes de animación suave */
+button, input {
+  transition: all 0.3s ease-in-out;
+}
