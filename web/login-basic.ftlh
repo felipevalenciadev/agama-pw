@@ -38,7 +38,7 @@
 		<form method="post" class="my-8">
 		  <div class="relative mb-2">
 			<label for="username" class="bg-gray-50label mt-2 ml-1 leading-tighter text-gray-600 text-base cursor-text">
-			  Username
+			  Email
 			</label>
 			<input type="text" id="username" value="${uid!''}" name="username" autofocus="" class="bg-gray-50 w-full rounded px-3 border border-gray-300 pt-2 pb-2 focus:border-green-700">
 		  </div>
