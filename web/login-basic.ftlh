@@ -15,7 +15,7 @@
   
 	<!-- HEADER: logo grande (independiente del form) -->
 	<header class="w-full flex justify-center pt-6 pb-4 logo-hero">
-	  <img src="https://www.rediris.es/assets/wbb5/mm/carrusel-1.svg" alt="RedIRIS" class="logo-img">
+  		<img src="https://www.rediris.es/assets/wbb5/mm/carrusel-1.svg" alt="RedIRIS" class="logo-img">
 	</header>
 	<!-- MAIN: el formulario queda centrado dentro del espacio restante -->
 	<main class="flex-1 main-area">
@@ -58,37 +58,34 @@
 	  </div>
 	</main>
   
-
+  
 </body>
 
 <script>
-window.onload = function () {
-  const form = document.querySelector("form");
-  const username = document.getElementById("username");
-  const password = document.getElementById("password");
-
-  form.onsubmit = function (e) {
-    let valid = true;
-
-    // Reiniciar estado previo
-    [username, password].forEach((input) => {
-      input.classList.remove("input-error");
-    });
-
-    if (username.value.trim() === "") {
-      username.classList.add("input-error");
-      valid = false;
-    }
-    if (password.value.trim() === "") {
-      password.classList.add("input-error");
-      valid = false;
-    }
-
-    // Evita enviar el formulario si hay errores
-    if (!valid) {
-      e.preventDefault();
-    }
-  };
-};
-</script>
+	window.onload = function () {
+	  const form = document.querySelector("form");
+	  const username = document.getElementById("username");
+	  const password = document.getElementById("password");
+	  form.onsubmit = function (e) {
+		let valid = true;
+		// Reiniciar estado previo
+		[username, password].forEach((input) => {
+		  input.classList.remove("input-error");
+		}
+									);
+		if (username.value.trim() === "") {
+		  username.classList.add("input-error");
+		  valid = false;
+		}
+		if (password.value.trim() === "") {
+		  password.classList.add("input-error");
+		  valid = false;
+		}
+		// Evita enviar el formulario si hay errores
+		if (!valid) {
+		  e.preventDefault();
+		}
+	  };
+	};
+  </script>
 </html>
