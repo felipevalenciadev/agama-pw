@@ -1,7 +1,7 @@
 [#ftl output_format="HTML"]
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SSO IRISMail</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" type="text/css"><link rel="stylesheet" href="style.css" type="text/css"></head>
+<head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>SSO IRISMail</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"><link rel="stylesheet" href="style.css"></head>
 <body>
 
 
@@ -14,11 +14,14 @@
 
 
 
-  <div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-md text-center relative loginCard">
-    
-    <img src="https://www.rediris.es/assets/wbb5/mm/carrusel-1.svg" alt="RedIRIS Logo" class="mx-auto mb-6 w-56 h-auto">
+  <!-- LOGO -->
+  <div class="w-full flex justify-center mb-8">
+    <img src="https://www.rediris.es/assets/wbb5/mm/carrusel-1.svg" alt="RedIRIS Logo" class="max-w-[80%] h-auto object-contain">
+  </div>
 
-    <h2 class="text-2xl font-bold text-[#006072] mb-6 tracking-wide title-shadow">
+  <!-- FORM -->
+  <div class="bg-white shadow-2xl rounded-2xl p-10 w-full max-w-md text-center z-10 relative loginCard">
+    <h2 class="text-3xl font-bold text-[#006072] mb-6 tracking-wide title-shadow">
       <span class="underline-title">SSO IRISMail</span>
     </h2>
 
@@ -47,6 +50,9 @@
       </button>
     </form>
   </div>
+
+  <!-- WAVE DE FONDO -->
+  <div class="wave"></div>
 
   
 
