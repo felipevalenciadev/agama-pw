@@ -4,7 +4,13 @@
   --text-gray: #6b7280;
 }
 
-/* LOGO: 80% del viewport, sin deformarse */
+/* === LOGO === */
+.logo-hero {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.03), rgba(255, 255, 255, 0));
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.04);
+  padding: 1rem 0 2rem 0;
+}
+
 .logo-img {
   width: min(80vw, 1200px);
   height: auto;
@@ -12,7 +18,7 @@
   margin: 0 auto;
 }
 
-/* Área principal centrada vertical y horizontalmente */
+/* === ÁREA PRINCIPAL === */
 .main-area {
   min-height: 60vh;
   display: grid;
@@ -50,35 +56,26 @@
   background: linear-gradient(90deg, var(--brand-2), var(--brand));
 }
 
-/* === BOTÓN PRINCIPAL === */
-.login-btn {
-  background: var(--brand);
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 1rem;
-  width: 100%;
-  padding: 0.8rem 1rem;
-  margin-top: 0.5rem;
-  cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 6px 14px rgba(0, 96, 114, 0.18);
-}
-.login-btn:hover {
-  background: var(--brand-2);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 18px rgba(0, 96, 114, 0.22);
+/* === ESPACIADO ENTRE ELEMENTOS === */
+.loginCard h2 {
+  margin-bottom: 2.8rem; /* más espacio entre título y primer campo */
 }
 
-/* === FLOATING LABELS === */
 .floating-group {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 2.2rem; /* espacio entre inputs */
 }
 
+.loginCard p {
+  font-size: 0.85rem;
+  color: #4b5563;
+  margin-top: 2.2rem; /* más espacio sobre footer */
+}
+
+/* === CAMPOS (FLOATING LABEL) === */
 .floating-input {
   width: 100%;
+  height: 50px; /* igual que botón */
   padding: 1rem 0.75rem 0.25rem 0.75rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
@@ -86,6 +83,7 @@
   background: #fff;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
 .floating-input:focus {
@@ -93,7 +91,6 @@
   box-shadow: 0 0 0 3px rgba(0, 96, 114, 0.15);
 }
 
-/* El label dentro del input */
 .floating-label {
   position: absolute;
   left: 0.75rem;
@@ -108,25 +105,44 @@
 }
 
 /* Efecto flotante al enfocar o tener texto */
-.floating-input:focus + .floating-label,.floating-input:not(:placeholder-shown) + .floating-label {
+.floating-input:focus + .floating-label,
+.floating-input:not(:placeholder-shown) + .floating-label {
   top: -0.55rem;
   left: 0.65rem;
   font-size: 0.75rem;
   color: var(--brand);
   opacity: 1;
-}
-
-/* Animación suave de entrada/salida */
-.floating-input:focus + .floating-label {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* === TEXTO INFERIOR === */
-.loginCard p {
-  font-size: 0.85rem;
-  color: #4b5563;
-  margin-top: 1.5rem;
+/* === BOTÓN PRINCIPAL === */
+.login-btn {
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  height: 50px; /* igual que inputs */
+  width: 100%;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 6px 14px rgba(0, 96, 114, 0.18);
+  box-sizing: border-box;
 }
+.login-btn:hover {
+  background: var(--brand-2);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0, 96, 114, 0.22);
+}
+
+/* === VALIDACIÓN (ERRORES) === */
+.input-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
+}
+
+/* === FOOTER (Soportado por Quersystem) === */
 .loginCard a {
   color: var(--brand);
   font-weight: 600;
@@ -136,7 +152,7 @@
   text-decoration: underline;
 }
 
-/* === MENSAJES (FREEMARKER) === */
+/* === MENSAJES FREEMARKER === */
 .errorMessage {
   color: #b91c1c;
 }
@@ -144,7 +160,7 @@
   color: #1e40af;
 }
 
-/* === RESPONSIVE AJUSTES === */
+/* === RESPONSIVE === */
 @media (max-width: 600px) {
   .loginCard {
     padding: 2rem;
@@ -157,10 +173,3 @@
     font-size: 0.9rem;
   }
 }
-
-/* Bordes rojos si hay error */
-.input-error {
-  border-color: #dc2626 !important;
-  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15);
-}
-
